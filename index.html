@@ -2,48 +2,48 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatos</title>
 </head>
 
 <body>
-    <input placeholder="Digite o nome do Contato">
-    <p></p>
-    <button onclick="search()">Procurar contato</button>
-</body>
-<script>
+  <input placeholder="Digite o nome do Contato">
+  <p></p>
+  <button onclick="search()">Procurar contato</button>
 
-    let p = document.querySelector("p")
-    let input = document.querySelector("input")
+  <script>
+    let p = document.querySelector("p");
+    let input = document.querySelector("input");
 
     const contacts = [
-        { name: "Gabryelle", number: "(11)942458569" },
-        { name: "Marilia", number: "(11)942458569" },
-        { name: "Paulo Henrique", number: "(11)942458569" },
-        { name: "Maria", number: "(11)942458569" },
-        { name: "Francisco", number: "(11)942458569" },
-    ]
+      { name: "Gabryelle", number: "(11)942458569" },
+      { name: "Marilia", number: "(11)942458569" },
+      { name: "Paulo Henrique", number: "(11)942458569" },
+      { name: "Maria", number: "(11)942458569" },
+      { name: "Francisco", number: "(11)942458569" },
+    ];
 
     function search() {
-        let i = 0;
-        let found = false;
-        const inputValue =  input.value.toLowerCase();
+      let i = 0;
+      let found = false;
+      const inputValue = input.value.toLowerCase();
 
-        while (i < contacts.length) {
-
-            const contact = contacts[i];
-            if (contacts.name === input.value) {
-                p.innerHTML = `Contato encontrado Nome:${contact.name} Tel:${contact.number}`;
-                let found = true;
-                break;
-            }
-            i++
-            if (!found) {
-                p.innerHTML = `Contato não encontrado. Tente Novamente`;
-            }
+      while (i < contacts.length) {
+        const contact = contacts[i];
+        if (contact.name.toLowerCase() === inputValue) {
+          p.innerHTML = `Contato encontrado Nome: ${contact.name} Tel: ${contact.number}`;
+          found = true;
+          break;
         }
+        i++;
+      }
+
+      if (!found) {
+        `p.innerHTML = Contato não encontrado. Tente novamente.`;
+      }
     }
-</script>
+  </script>
+</body>
 
 </html>
