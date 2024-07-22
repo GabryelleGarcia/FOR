@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacts</title>
+    <title>Contatos</title>
 </head>
 
 <body>
@@ -26,15 +26,21 @@
     ]
 
     function search() {
+        let i = 0;
+        let found = false;
+        const inputValue =  input.value.toLowerCase();
 
-        for (const contact of contacts) {
+        while (i < contacts.length) {
 
-            if (input.value.toLowerCase() === contact.name.toLowerCase()) {
-                p.innerHTML = `Contato encontrado Name:${contact.name} Tel:${contact.number}`
-                break
+            const contact = contacts[i];
+            if (contacts.name === input.value) {
+                p.innerHTML = `Contato encontrado Nome:${contact.name} Tel:${contact.number}`;
+                let found = true;
+                break;
             }
-            else {
-                p.innerHTML = "Contato não encontrado, tente novamente"
+            i++
+            if (!found) {
+                p.innerHTML = `Contato não encontrado. Tente Novamente`;
             }
         }
     }
